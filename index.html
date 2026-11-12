@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Buscar Pokémon</h1>
+
+        <form id="formPoke">
+            <input
+                type="number"
+                id="idPoke"
+                placeholder="Digite o ID"
+                min="1"
+                required
+            >
+            <button type="submit">Buscar</button>
+        </form>
+
+        <p id="msg"></p>
+
+        <div id="resultado">
+        <h2 id="nomePokemon"></h2>
+        <img src="" alt="Imagem do Pokémon" id="imgPoke">
+    
+        <!-- Novos campos adicionados -->
+        <div id="tiposPoke"></div>
+        <p id="vantagensPoke"></p>
+    
+        <p id="basePoke"></p>
+        </div>  
+    </main>   
+
+    <script src="main.js"></script>
+</body>
+</html>

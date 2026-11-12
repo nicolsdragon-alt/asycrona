@@ -1,0 +1,197 @@
+/* Reset básico e fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Imagem de paisagem estilo Pokémon + camada escura suave para dar contraste */
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('https://images.alphacoders.com/998/998181.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Cartão principal com leve transparência (efeito vidro) */
+main {
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px); /* Desfoca o fundo atrás do cartão */
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-top: 12px solid #e53935; /* Topo vermelho Pokédex */
+}
+
+h1 {
+    color: #263238;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Formulário de busca */
+#formPoke {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#idPoke {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #cfd8dc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#idPoke:focus {
+    border-color: #ef5350;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #ffcb05; /* Amarelo Pokémon */
+    color: #2a75bb; /* Azul Pokémon */
+    font-weight: bold;
+    font-size: 1rem;
+    border: 2px solid #2a75bb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #f5b800;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Mensagem de erro ou carregamento */
+#msg {
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+/* Área de exibição do Pokémon */
+#resultado {
+    background-color: #f5f7fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #eceff1;
+    transition: all 0.3s ease;
+}
+
+/* Esconde a caixa de resultado caso esteja vazia */
+#resultado:has(#nomePokemon:empty) {
+    display: none;
+}
+
+#nomePokemon {
+    color: #37474f;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+#imgPoke {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin: 10px auto;
+    display: block;
+    filter: drop-shadow(0 8px 10px rgba(0,0,0,0.15));
+}
+
+/* Esconde a imagem se o src estiver vazio */
+#imgPoke[src=""] {
+    display: none;
+}
+
+#basePoke {
+    color: #546e7a;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #e0e7ff;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+#basePoke:empty {
+    display: none;
+}
+/* Container das etiquetas de tipo */
+#tiposPoke {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.badge-tipo {
+    padding: 5px 12px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #607d8b; /* Cor padrão */
+}
+
+/* Cores temáticas para os principais tipos */
+.fire { background-color: #f08030; }
+.water { background-color: #6890f0; }
+.grass { background-color: #78c850; }
+.electric { background-color: #f8d030; color: #333; }
+.psychic { background-color: #f85888; }
+.ice { background-color: #98d8d8; color: #333; }
+.dragon { background-color: #7038f8; }
+.dark { background-color: #705848; }
+.fairy { background-color: #ee99ac; color: #333; }
+.normal { background-color: #a8a878; }
+.fighting { background-color: #c03028; }
+.flying { background-color: #a890f0; }
+.poison { background-color: #a040a0; }
+.ground { background-color: #e0c068; color: #333; }
+.rock { background-color: #b8a038; }
+.bug { background-color: #a8b820; }
+.ghost { background-color: #705898; }
+.steel { background-color: #b8b8d0; color: #333; }
+
+/* Caixa de vantagens */
+#vantagensPoke {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+#vantagensPoke:empty {
+    display: none;
+}
